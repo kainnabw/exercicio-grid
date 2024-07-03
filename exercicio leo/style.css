@@ -1,0 +1,119 @@
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.principal{
+    display: grid;
+    grid-template-columns: 80% 20%;
+    grid-template-rows: 100px auto 150px;
+    grid-template-areas:
+        "header header"
+        "main sidebar"
+        "footer footer";
+}
+
+header{
+    grid-area: header;
+    background-color: blue;
+    height: 10vh;
+    width: 100%;
+    text-align: center;
+    color: white;
+    font-size: 30px;
+    
+}
+.conteudo{
+    height: 100vh;
+    grid-area: main;
+    display: flex;
+    background-color: pink;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 50px;
+    
+}
+.quadrado{
+    background-color: red;
+    height: 200px;
+    width: 200px;
+   
+}
+
+.sidebar{
+    grid-area: sidebar;
+    height: 100%;
+    background-color: yellow;
+    text-align: center;
+    color: black;
+    font-size: 30px;
+}
+footer{
+    grid-area: footer;
+    height: 20vh;
+    width: 100%;
+    background-color: red;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+footer div {
+    outline: 1px solid black;
+}
+.parte1, .parte3{
+width: 25%;
+background-color: purple;
+height: 20vh;
+
+}
+.parte2{
+    height: 20vh;
+    width: 50%;
+    background-color: purple;
+}
+@media (max-width:992px) {
+    .principal{
+        display: grid;
+        grid-template-columns: 100%;
+        
+        grid-template-areas:
+            "header"
+            "main"
+            "sidebar"
+            "footer";
+    }
+    .parte2{
+        order: -1;
+        width: 100%;
+    }
+    .parte1{
+        width: 49%;
+    }
+    .parte3{
+        width: 49%;
+    }
+}
+@media (max-width: 768px){
+    .principal{
+        display: grid;
+        grid-template-columns: 100%;
+        
+        grid-template-areas:
+            "header"
+            "main"
+            "sidebar"
+            "footer";
+    }
+    .parte2{
+    
+        width: 100%;
+    }
+    .parte1{
+        width: 100%;
+    }
+    .parte3{
+        width: 100%;
+    }
+}
